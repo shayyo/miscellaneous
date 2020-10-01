@@ -23,9 +23,12 @@ def parse_args():
         if arguments[flag][0] in "-f":
             files.append(arguments[flag][1])
 
+    add_files(files)
 
-def add_file([]):
-    pass
+
+def add_files(files):
+    print(files)
+
 
 def usage():
     print("Usage: build_firmware.py -o output_filename -f file1 -f file2\n")
@@ -34,3 +37,4 @@ def usage():
 
 if __name__ == "__main__":
     parse_args()
+
