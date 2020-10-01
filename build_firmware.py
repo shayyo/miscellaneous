@@ -1,10 +1,11 @@
 import getopt
 import sys
 
+output_filename = "firmware.firm"
+
 
 def parse_args():
     files = []
-    output_filename = "firmware.firm"
     argument_list = sys.argv[1:]
     short_options = "ho:f:"
 
@@ -19,6 +20,7 @@ def parse_args():
         if arguments[flag][0] in "-h":
             usage()
         if arguments[flag][0] in "-o":
+            global output_filename
             output_filename = arguments[flag][1]
         if arguments[flag][0] in "-f":
             files.append(arguments[flag][1])
@@ -28,6 +30,7 @@ def parse_args():
 
 def add_files(files):
     print(files)
+    print(output_filename)
 
 
 def usage():
